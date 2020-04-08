@@ -5,6 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 const swig = require('swig')//模版语言中间键
+// ----------取消缓存-------
+swig.setDefaults({cache:false})
+
+// ----------取消缓存-------
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -17,9 +22,6 @@ app.engine('html',swig.renderFile)//选择用引擎渲染什么格式 html   匹
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');//引擎 格式
 
-// ----------取消缓存-------
-swig.setDefaults({cache:false})
-// ----------取消缓存-------
 
 
 app.use(logger('dev'));
@@ -34,7 +36,7 @@ app.use('/main', mainRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  next(createError(401));
 });
 
 // error handler
