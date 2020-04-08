@@ -1,0 +1,751 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>博客</title>
+<link href="/css/main.css" rel="stylesheet" type="text/css">
+<link href="/fontAwesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<script src = "/js/jquery-1.12.4.min.js"></script>
+<script src = "/js/index.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="backimg"><img src="/images/IMG_0293.JPG"></div>
+        <div class="logo"><span></span><img src="/images/00002637.png"></div>
+    </header>
+
+    <nav>
+        <div class="menu">
+            <a href="/" class="focus">首页</a>
+            
+                <a href="/578d0a391b82d423481b6930">HTML5</a>
+            
+                <a href="/578d0a431b82d423481b6931">CSS</a>
+            
+                <a href="/578d0a4a1b82d423481b6932">JAVASCRIPT</a>
+            
+                <a href="/578d0a501b82d423481b6933">PHP</a>
+            
+                <a href="/578d0a541b82d423481b6934">JAVA</a>
+            
+                <a href="/57921998f925118da88ea826">Express</a>
+            
+        </div>
+    </nav>
+
+    
+
+    <main class="clear">
+        <div class="mainLeft">
+            
+            <div class="listBox">
+                <h1>symfony2</h1>
+                <p class="colDefault">
+                    作者：<span class="colInfo">admin</span> - 
+                    时间：<span class="colInfo">2016年7月19日 1:3:31</span> - 
+                    阅读：<span class="colInfo">231</span> - 
+                    评论：<span class="colInfo">10</span>
+                </p>
+                <dfn><p>PHP框架 - symfony2</p></dfn>
+                <div class="function"><a href="/view/578d0be3fb13ff664906f7fd">阅读全文</a></div>
+            </div>
+            
+            <div class="listBox">
+                <h1>h1标签</h1>
+                <p class="colDefault">
+                    作者：<span class="colInfo">admin</span> - 
+                    时间：<span class="colInfo">2016年7月19日 1:1:37</span> - 
+                    阅读：<span class="colInfo">93</span> - 
+                    评论：<span class="colInfo">1</span>
+                </p>
+                <dfn><p>h1标签介绍</p></dfn>
+                <div class="function"><a href="/view/578d0b715e521642492fc0fd">阅读全文</a></div>
+            </div>
+            
+            <div class="listBox">
+                <h1>DOM</h1>
+                <p class="colDefault">
+                    作者：<span class="colInfo">admin</span> - 
+                    时间：<span class="colInfo">2016年7月20日 16:24:38</span> - 
+                    阅读：<span class="colInfo">95</span> - 
+                    评论：<span class="colInfo">41</span>
+                </p>
+                <dfn><h2>DOM - Document Object Model</h2>
+
+<blockquote><p>文档对象模型</p></blockquote></dfn>
+                <div class="function"><a href="/view/578f3546ce908f1c8c43cff0">阅读全文</a></div>
+            </div>
+            
+
+            <div class="pager">
+                <ul class="clear">
+                    
+                    <li class="previous">
+                    
+                        <a href="javascript:;">没有上一页了</a>
+                    
+                    </li>
+
+                    <li>
+                        <strong>1 / 2</strong>
+                    </li>
+
+                    <li class="next">
+                    
+                        <a href="/2">下一页</a>
+                    
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div class="mainRight">
+            
+           {% if userInfo._id %}
+            <div class="rightBox"  id = 'userInfo'>
+                <div class="title"><span>用户信息</span></div>
+                <p><span class="colDark">{{ userInfo.username }}</span></p>
+                
+                {% if userInfo.isAdmin %}
+                 <p>
+                     <span class="colDanger info">你好，管理员！😁</span>
+                     <!--增加一个链接，可以登录后台的链接 -->
+                     <a href="/admin">进入管理</a>
+                 </p>
+                {% else %}
+              
+                 <p><span class="colDanger info">你好，欢迎光临我的博客！😁</span></p>
+                {% endif %}
+                
+                <p><span class="colDark"><a href="/logout" id="logoutBtn">退出</a></span></p>
+            </div>
+           {% else %}
+
+            <div class="rightBox" id="loginBox">
+                <div class="title"><span>登录</span></div>
+                <div class="line"><span class="colDark">用户名：</span><input type="text" name = "username"/><em></em></div>
+                <div class="line"><span class="colDark">密码：</span><input type="password" name = "password"/><em></em></div>
+                <div class="line"><span class="colDark"></span><button>登 录</button></div>
+                <p class="textRight">还没注册？<a href="#" class="colMint">马上注册</a>　</p>
+                <p class="colWarning textCenter"></p>
+            </div>
+            {% endif %}
+            <div class="rightBox" id="registerBox" style = 'display: none'>
+                <div class="title"><span>注册</span></div>
+                <div class="line"><span class="colDark">用户名：</span><input type="text" name = "username" /></div>
+                <div class="line"><span class="colDark">密码：</span><input type="password" name = "password" /></div>
+                <div class="line"><span class="colDark">确认：</span><input type="password" name = "repassword" /></div>
+                <div class="line"><span class="colDark"></span><button>注 册</button></div>
+                <p class="textRight">已有账号？<a href="#" class="colMint">马上登录</a>　</p>
+                <p class="colWarning textCenter"></p>
+            </div>
+
+
+            <div class="rightBox">
+                <div class="title"><span>社区</span></div>
+                    <p><a href="http://www.mobiletrain.org/" target="_blank" class="colDanger">千锋课堂</a></p>
+                    <p><a href="http://www.mobiletrain.org/" target="_blank" class="colDanger">千锋茶馆</a></p>
+                </div>
+            </div>
+
+
+    </main>
+
+    <div class="copyright textCenter">Copyright 2011-2015 北京千锋互联科技有限公司 京ICP备12003911号-3 京公网安备11010802011455号</div>
+</body>
+<script>
+    <template>
+    <div style="display:flex;">
+        <!-- 左侧菜单 -->
+        <div style="width:200px;background:#fff;" class="nav">
+        <button class="statustitle current" @click="searchStatus('', '0'), withdrawstatus(0)" id="0">
+        全部申请({{ navlist[5] }})
+    </button>
+    <button class="statustitle" @click="searchStatus('1', '1'), withdrawstatus(1)" id="1">
+        待审核({{ navlist[0] }})
+    </button>
+    <button class="statustitle" @click="searchStatus('2', '2'), withdrawstatus(0)" id="2">审核通过</button>
+        <button class="statustitle" @click="searchStatus('3', '3'), withdrawstatus(0)" id="3">审核驳回</button>
+        <button class="statustitle" @click="searchStatus('5', '5'), withdrawstatus(2)" id="5">打款失败</button>
+        </div>
+        <div style="width:1%;"></div>
+        <!-- 右侧表格 -->
+        <div style="width:90%;">
+        <div style="background:#fff;margin-bottom:10px;">
+        <a-card :bordered="false">
+        <!-- 查询区域 -->
+        <div class="table-page-search-wrapper">
+        <a-form layout="inline">
+        <a-row :gutter="24">
+        <a-col :md="6" :sm="12">
+        <a-form-item>
+        <a-input placeholder="请输入提现申请号" v-model="queryParam.cashOutApplyId"></a-input>
+        </a-form-item>
+        </a-col>
+        <a-col :md="4" :sm="12">
+        <a-form-item>
+        <a-input placeholder="请输入申请人信息" v-model="queryParam.customerName"></a-input>
+        </a-form-item>
+        </a-col>
+        <a-col :md="3" :sm="12">
+        <a-select @change="handleChange" placeholder="请选择提现方式">
+        <a-select-option value="GR">个人提现</a-select-option>
+        <a-select-option value="DG">对公转账</a-select-option>
+        </a-select>
+        </a-col>
+        <a-col :md="3" :sm="12">
+        <a-select @change="handleChangePlat" placeholder="请选择提现平台">
+        <a-select-option value="">海澄嗨选APP</a-select-option>
+        <a-select-option value="">海澄嗨团小程序</a-select-option>
+        </a-select>
+        </a-col>
+        <a-col :md="7" :sm="12">
+        <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">
+        <a-button type="primary" @click="searchQuery" icon="search">查询</a-button>
+        <a-button type="primary" @click="searchReset" icon="reload" style="margin-left: 8px">重置</a-button>
+        </span>
+        </a-col>
+        </a-row>
+        </a-form>
+        </div>
+        </a-card>
+        </div>
+        <div style="background:#fff;">
+        <div style="height:52px;">
+        <a-button
+    type="primary"
+    @click="pass"
+    :loading="passloading"
+    style="margin:10px;"
+    :class="[{ hide: !reviewbtn }]"
+        >审批通过</a-button
+        >
+        <a-button
+    type="primary"
+    @click="back"
+    :loading="backloading"
+    style="background:red;border-color:red;margin:10px;"
+    :class="[{ hide: !reviewbtn }]"
+        >审批驳回</a-button
+        >
+        <a-button
+    type="primary"
+    @click="repass"
+    :loading="reloading"
+    style="background:#70B603;border-color:#70B603;margin:10px;"
+    :class="[{ hide: !remoneybtn }]"
+        >再次打款</a-button
+        >
+        <span style="font-size:18px;font-weight:bold;float:right;height:52px;line-height:52px;">
+        &nbsp;&nbsp;可用余额：
+    <span style="width:250px;padding-right:26px;">{{ lastmoney }}元</span>
+    </span>
+    </div>
+    <a-table
+    size="middle"
+    bordered
+        :columns="columns"
+    :dataSource="dataSource"
+    :loading="loading"
+    :rowKey="
+    dataSource.forEach(item => {
+        return item.cashOutApplyId
+    })
+    "
+    :pagination="ipagination"
+    @change="handleTableChange"
+    :rowSelection="{ selectedRowKeys: selectedRowKeys, onChange: onSelectChange }"
+        >
+        <!-- slot数据名； slot-scope数据代号插槽名，对应data中的数据代号 -->
+        <div slot="withdrawway" slot-scope="withdrawway">
+        <div>{{ withdrawway }}</div>
+    </div>
+    <div slot="customerarea" slot-scope="customerarea">
+        <span>{{ customerarea.customerN }}</span>
+    <span>({{ customerarea.cellphone }})</span>
+    </div>
+    <div slot="operation" slot-scope="operation" style="display:flex;justify-content:space-between;">
+        <a-button
+    type="primary"
+    @click="lookwithdrawdetail(operation.withdrawT, operation.applyid)"
+    class="btn-look"
+        >查看提现信息</a-button
+        >
+        <!-- <div @click="lookwithdrawdetail('GR')" class="btn-look">查看提现信息</div> -->
+        <a-button
+    type="primary"
+    class="btn-look"
+    v-if="operation.applystatus == '1'"
+    @click="withdrawReview(operation.applyid)"
+    style="background-color:#70B603;border-color:#70B603;"
+        >审核通过</a-button
+        >
+        <a-button
+    type="primary"
+    class="btn-look"
+    v-if="operation.applystatus == '1' || operation.applystatus == '5'"
+    @click="withdrawBack(operation.applyid)"
+    style="background-color:#D9001B;border-color:#D9001B;"
+        >审核驳回</a-button
+        >
+        <!-- 再次打款与审核通过一样 -->
+        <a-button
+    type="primary"
+    class="btn-look"
+    v-if="operation.applystatus == '5'"
+    @click="withdrawReview(operation.applyid)"
+    style="background-color:#70B603;border-color:#70B603;"
+        >再次打款</a-button
+        >
+        </div>
+        </a-table>
+        </div>
+        </div>
+        <!-- 个人转账 -->
+        <withdraw-detail ref="withdrawdetail" @reload="reload"></withdraw-detail>
+        <!-- 对公转账 -->
+        <withdraw-public ref="withdrawdetailpublic" @reload="reload"></withdraw-public>
+        <!-- 审核通过 -->
+        <withdraw-review ref="withdrawreview" @reload="reload"></withdraw-review>
+        <!-- 审核驳回 -->
+        <withdraw-back ref="withdrawback" @reloadback="reload"></withdraw-back>
+        </div>
+        </template>
+        <script>
+    import { JeecgListMixin } from '@/mixins/JeecgListMixin'
+    import moment from 'moment'
+    import { httpAction, getAction, putAction, postAction } from '@/api/manage'
+    import WithdrawDetail from './modules/WithdrawDetail'
+    import WithdrawPublic from './modules/WithdrawDetailPublic'
+    import WithdrawReview from './modules/WithdrawReview'
+    import WithdrawBack from './modules/WithdrawBack'
+    import func from '../../../vue-temp/vue-editor-bridge'
+
+    export default {
+        name: 'OrdersList',
+        mixins: [JeecgListMixin],
+        components: {
+            WithdrawDetail,
+            WithdrawPublic,
+            WithdrawReview,
+            WithdrawBack
+        },
+        data() {
+            return {
+                lastmoney: '', //公司转账余额
+                queryParam: {
+                    cashOutApplyId: '', //输入的提现号
+                    customerName: '', //输入的提现人信息
+                    cashStatus: '', //提现状态
+                    cashType: '', //提现类型
+                    cashPlat: ''
+                },
+                total: '', //列表总数
+                navlist: [], //nav列表
+                withdrawflag: 0, //0全部、已审核、审批驳回 1未审核 2打款失败
+                reviewbtn: false, //批量审核按钮 false隐藏 true显示
+                remoneybtn: false, //批量打款按钮 false隐藏 true显示
+                selectedRowKeys: [], // Check here to configure the default column
+                loading: false,
+                passloading: false,
+                backloading: false,
+                reloading: false,
+                selectedArray: [],
+                columns: [
+                    {
+                        key: 'cashOutApplyId',
+                        title: '申请提现编号',
+                        dataIndex: 'cashOutApplyId',
+                        width: 300
+                    },
+                    {
+                        key: 'withdrawway',
+                        title: '提现方式',
+                        dataIndex: 'withdrawway', //dataindex 数据名
+                        scopedSlots: { customRender: 'withdrawway' }, //数据代号插槽名
+                        width: 160
+                    },
+                    {
+                        key: 'customerarea',
+                        title: '申请人',
+                        dataIndex: 'customerarea',
+                        scopedSlots: { customRender: 'customerarea' },
+                        width: 160
+                    },
+                    {
+                        key: 'cashOutAmount',
+                        title: '提现金额（元）',
+                        dataIndex: 'cashOutAmount',
+                        width: 160
+                    },
+                    {
+                        title: '提现平台',
+                        dataIndex: '',
+                        width: 160
+                    },
+                    {
+                        title: '申请时间',
+                        dataIndex: 'createTime',
+                        width: 200
+                    },
+                    {
+                        key: 'cashStatusName',
+                        title: '提现状态',
+                        dataIndex: 'cashStatusName',
+                        width: 160
+                    },
+
+                    {
+                        key: 'operation',
+                        title: '操作',
+                        dataIndex: 'operation',
+                        scopedSlots: { customRender: 'operation' },
+                        width: 330
+                    }
+                ],
+                dataSource: [
+                    {
+                        key: '1',
+                        withdrawcode: '123456',
+                        withdrawway: '对公',
+                        applyperson: '小狐狸',
+                        withdrawamount: '188',
+                        billstatus: '提现状态...',
+                        operation: {
+                            withdrawT: '',
+                            applyid: '',
+                            applystatus: ''
+                        },
+                        customerarea: {}
+                    }
+                ],
+
+                url: {
+                    list: '/cashOut/cashOutApply/list',
+                    navlist: '/cashOut/cashOutApply/cashOutApplyList',
+                    lastmoney: '/cashOut/cashOutApply/getCompanyBalance',
+                    reviewpass: '/cashOut/cashOutApply/shenhe'
+                }
+                // operation:{}
+            }
+        },
+        computed: {
+            importExcelUrl: function() {
+                return `${window._CONFIG['domianURL']}/${this.url.importExcelUrl}`
+            },
+            hasSelected() {
+                return this.selectedRowKeys.length > 0
+            }
+        },
+        created() {
+            this.requestStatus()
+            this.requestMoney()
+        },
+        methods: {
+            //刷新
+            reload(currentpage) {
+                console.log('重新加载withdrawlist')
+                this.requestStatus()
+                this.requestMoney()
+                this.loadData(currentpage)
+            },
+            //审核通过
+            withdrawReview(withdrawid) {
+                this.selectedArray = [] //清空批量防止再次发送
+                console.log(this.selectedArray)
+                this.$refs.withdrawreview.detail(withdrawid, this.ipagination.current)
+            },
+            //审核驳回
+            withdrawBack(withdrawid) {
+                this.$refs.withdrawback.detail(withdrawid, this.ipagination.current)
+            },
+            requestStatus() {
+                if (!this.url.navlist) {
+                    this.$message.error('请设置url.navlist属性!')
+                    return
+                }
+                // console.log('获取nav列表')
+                this.loading = true
+                getAction(this.url.navlist).then(res => {
+                    if (res.success) {
+                        this.nav = res.result
+                        console.log(this.nav, 'nav列表')
+                        res.result.forEach(item => {
+                            if (item.num == null) {
+                                item.num = 0
+                            }
+                        })
+                        this.navlist = []
+                        this.navlist[5] = this.getFilter(null, res.result) //全部
+                        this.navlist[0] = this.getFilter('1', res.result) //审核中/未审核
+                        this.navlist[1] = this.getFilter('2', res.result) //审核成功
+                        this.navlist[2] = this.getFilter('3', res.result) //审核驳回
+                        this.navlist[3] = this.getFilter('4', res.result) //转账成功
+                        this.navlist[4] = this.getFilter('5', res.result) //转账失败
+                        // console.log('navlist数组',this.navlist)
+                    }
+                    this.loading = false
+                })
+            },
+            //查询余额
+            requestMoney() {
+                if (!this.url.lastmoney) {
+                    this.$message.error('请设置url.lastmoney属性!')
+                    return
+                }
+
+                postAction(this.url.lastmoney).then(res => {
+                    if (res.success) {
+                        this.lastmoney = res.result
+                    }
+                })
+            },
+            getFilter(key, res) {
+                let count
+                res.forEach(item => {
+                    if (key == item.cashOutStatus) count = item.num
+                })
+                return count
+            },
+            withdrawstatus(flag) {
+                if (flag == 0) {
+                    this.reviewbtn = false
+                    this.remoneybtn = false
+                } else if (flag == 1) {
+                    this.reviewbtn = true
+                    this.remoneybtn = false
+                } else if (flag == 2) {
+                    this.reviewbtn = false
+                    this.remoneybtn = true
+                }
+            },
+
+            //批量操作
+            pass() {
+                this.passloading = true
+                if (this.selectedArray.length < 1) {
+                    this.$message.error('请重新确认审批名单')
+                    this.passloading = false
+                }
+                // ajax request after empty completing
+
+                console.log(this.selectedArray, '批量审批通过')
+                /*   let index = 0 //默认从第一个开始审批
+                  let allLength = this.selectedArray.length //总长度
+                  putReviewpass() //发送
+                  let putReviewpass = () => {
+                    postAction(this.url.reviewpass, { cashOutApplyId: this.selectedArray[index], cashStatus: '2' }).then(res => {
+                      if (res.success) {
+                        if (index < allLength) {
+                          putReviewpass() //递归
+                        } else {
+                          this.passloading = false
+                        }
+                        index++
+                      }
+                      if (!res.success) {
+                        console.log('id为' + item + '审核失败')
+                        this.selectedArray = []
+                        this.$message.error('id为' + item + '的提现申请审核失败')
+                        // 刷新
+                        this.reload(this.ipagination.current)
+                      }
+                    })
+                  } */
+            },
+            back() {
+                this.backloading = true
+                // ajax request after empty completing
+                setTimeout(() => {
+                    this.backloading = false
+                    this.selectedRowKeys = []
+                }, 1000)
+                this.selectedArray.forEach((item, index) => {
+                    postAction(this.url.reviewpass, { cashOutApplyId: item, cashStatus: '3' }).then(res => {
+                        this.$message.error(res.message)
+                        if (res.success) {
+                            console.log('id为' + item + '审核驳回过了')
+                        }
+                        if (!res.success) {
+                            console.log('id为' + item + '审核失败')
+                        }
+                        // 刷新
+                        this.reload(this.ipagination.current)
+                    })
+                })
+            },
+            repass() {
+                this.reloading = true
+                // ajax request after empty completing
+                setTimeout(() => {
+                    this.reloading = false
+                    this.selectedRowKeys = []
+                }, 1000)
+            },
+
+            getTotal(total) {
+                this.total = []
+                this.total = total
+                // console.log(this.total, 'this.total')
+            },
+            fentoyuan() {
+                this.dataSource.forEach(item => {
+                    // console.log(item.cashOutAmount,'item.cashOutAmount')
+                    item.cashOutAmount = this.changeMoney(item.cashOutAmount)
+                    // console.log(item.cashOutAmount,'item.cashOutAmount')
+                })
+            },
+            // 金额转换
+            changeMoney(num) {
+                var regexp = /(?:\.0*|(\.\d+?)0+)$/
+                if (num > 1000000) {
+                    num = JSON.stringify(num).slice(0, JSON.stringify(num).length - 4) / 100
+                    return num + '万'
+                } else {
+                    num = (num / 100).toFixed(2)
+                    num = num.replace(regexp, '$1')
+                    return num
+                }
+            },
+            withdrawType() {
+                this.dataSource.forEach(item => {
+                    item.operation = {
+                        withdrawT: '',
+                        applyid: ''
+                    }
+                    item.operation.withdrawT = item.cashOutApplyId.substr(0, 2)
+                    item.operation.applyid = item.cashOutApplyId
+                    item.operation.applystatus = item.cashStatus
+                    // console.log(item.operation, 'item.operation')
+                })
+                this.withdrawway()
+            },
+            withdrawway() {
+                this.dataSource.forEach(item => {
+                    if (item.operation.withdrawT == 'DG') {
+                        item.withdrawway = '对公转账'
+                    } else if (item.operation.withdrawT == 'GR') {
+                        item.withdrawway = '个人提现'
+                    }
+                })
+            },
+            customerinfo() {
+                this.dataSource.forEach(item => {
+                    item.customerarea = {
+                        customerN: '',
+                        cellphone: ''
+                    }
+                    item.customerarea.customerN = item.customerName
+                    item.customerarea.cellphone = item.username
+                })
+            },
+            searchStatus(status, id) {
+                //nav按照状态查询
+                this.getsearchStatus(status)
+                //清空高亮
+                var a = document.getElementsByClassName('statustitle')
+                // console.log(a, 'a')
+                for (var i = 0; i < a.length; i++) {
+                    a[i].classList.remove('current')
+                }
+                // console.log(a, '清空高亮')
+                //高亮
+                var current = document.getElementById(id)
+                current.classList.add('current')
+                // console.log(a, '高亮')
+            },
+
+            getsearchStatus(status) {
+                console.log(status)
+                this.queryParam.cashStatus = status
+                console.log(this.queryParam.cashStatus, '订单类型this.queryParam.cashStatus')
+                //查询
+                this.searchQuery()
+            },
+
+            handleChange(value) {
+                console.log('提现方式', value)
+                this.queryParam.cashType = value
+            },
+            handleChangePlat(value) {
+                console.log('提现平台', value)
+                this.queryParam.cashPlat = value
+            },
+            onSelectChange(selectedRowKeys) {
+                this.selectedArray = [] //每次选择时，清空之前已选
+                console.log(this.selectedArray)
+                console.log('selectedRowKeys changed: ', selectedRowKeys)
+                this.selectedRowKeys = selectedRowKeys
+                this.reviewArray()
+            },
+            reviewArray() {
+                this.selectedRowKeys.forEach((rowitem, rowindex) => {
+                    this.dataSource.forEach((item, index) => {
+                        console.log(rowitem)
+                        if (rowitem == index) {
+                            this.selectedArray.push(this.dataSource[index].cashOutApplyId)
+                            return
+                        }
+                    })
+                })
+                console.log('this.selectedArray', this.selectedArray)
+            },
+            lookwithdrawdetail(detailflag, applyid) {
+                if (detailflag == 'GR') {
+                    this.$refs.withdrawdetail.detail(applyid)
+                } else if (detailflag == 'DG') {
+                    this.$refs.withdrawdetailpublic.detail(applyid)
+                }
+            }
+        }
+    }
+</script>
+
+<style scoped>
+    @import '~@assets/less/common.less';
+    .hide {
+        display: none;
+    }
+    .nav div {
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        width: 100%;
+        overflow: hidden;
+    }
+    .statustitle {
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        width: 100%;
+        background: #fff;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid #f0f2f5;
+        overflow: hidden;
+    }
+    .current {
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        width: 100%;
+        background: #faad14;
+        border: 0;
+    }
+    .btn-look {
+        cursor: pointer;
+        /* text-decoration: underline; */
+        /* color: #6767ff; */
+    }
+    button {
+        padding: 4px;
+    }
+</style>
+
+</script>
+</html>
